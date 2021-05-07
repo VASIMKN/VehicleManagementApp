@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.cg.ovms")
 public class VehicleManagementAppApplication {
-
+//main method
 	public static void main(String[] args) {
 		SpringApplication.run(VehicleManagementAppApplication.class, args);
 	}
