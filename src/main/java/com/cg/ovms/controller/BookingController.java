@@ -1,5 +1,12 @@
-//package com.cg.ovms.controller;
-//
-//public class BookingController {
-//
-//}
+package com.cg.ovms.controller;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin
+@RequestMapping("/Booking")
+public class BookingController {
+
+}
