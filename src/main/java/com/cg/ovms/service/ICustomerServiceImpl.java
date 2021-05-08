@@ -1,6 +1,7 @@
 package com.cg.ovms.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.cg.ovms.entities.Customer;
 import com.cg.ovms.repository.ICustomerRepository;
+
 
 @Service
 public class ICustomerServiceImpl implements ICustomerService{
@@ -26,14 +28,21 @@ public class ICustomerServiceImpl implements ICustomerService{
 	}
 
 	@Override
+	@Transactional
 	public Customer removeCustomer(Customer customer) {
 		// TODO Auto-generated method stub
-		return null;
+		customerRepository.delete(customer);
+		return customer;
 	}
 
 	@Override
+	@Transactional
 	public Customer viewCustomer(Customer c) {
 		// TODO Auto-generated method stub
+		Optional<Customer> cust = customerRepository.findById(c.getCustomerId());
+		if(cust!=null){
+			return cust.get();
+ 		}
 		return null;
 	}
 
