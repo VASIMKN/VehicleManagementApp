@@ -168,18 +168,7 @@ public class BookingController {
 		
 				
 	}
-	/////
-//	@GetMapping(path="view/bydate", consumes = "application/json", produces = "application/json")
-//	public ResponseEntity<List<Booking>> viewAllBookingByDate(@RequestBody DateInput dateinput){
-//		
-//		   
-//		List<Booking> bookings = bookingService.viewAllBookingByDate(dateinput.getDate());
-//		if(bookings != null) {
-//			return new ResponseEntity<List<Booking>>(bookings, HttpStatus.OK); 
-//		}
-//		else
-//			return new ResponseEntity<List<Booking>>(bookings, HttpStatus.NOT_FOUND);
-//	}
+	
 	// 7th method.... view by vehicle id
 	@GetMapping(path="view/byvehicle/{id}", produces = "application/json")
 	public ResponseEntity<List<Booking>> viewAllBookingByVehicle(@PathVariable("id") int id){

@@ -33,9 +33,7 @@ public class IBookingServiceImpl implements IBookingService{
 	@Override
 	@Transactional
 	public Booking addBooking(Booking booking) {
-		// TODO Auto-generated method stub
-		//Driver driver = driverService.viewDriver(vehicle.getDriver().getDriverId());
-		//vehicle.setDriver(driver);
+		
 		int vid = booking.getVehicle().getVehicleId();
 		Vehicle vehicle = vehicleService.viewVehicle(vid);
 		booking.setVehicle(vehicle);
@@ -71,7 +69,7 @@ public class IBookingServiceImpl implements IBookingService{
 		logger.info("resulted Booking in updateBooking method: "+ booking);
 		return booking;
 	}
-	//4th mehtod... taking booking's id as parameter and finding that booking details
+	//4th method... taking booking's id as parameter and finding that booking details
 	@Override
 	public Booking viewBooking(int id) {
 		// TODO Auto-generated method stub

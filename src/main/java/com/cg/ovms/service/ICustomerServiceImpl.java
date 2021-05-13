@@ -51,31 +51,17 @@ public class ICustomerServiceImpl implements ICustomerService{
 		return customer;
 	}
 
-//	@Override
-//	@Transactional
-//	public Customer viewCustomer(Customer c) {
-//		// TODO Auto-generated method stub
-//		Optional<Customer> cust = customerRepository.findById(c.getCustomerId());
-//		if(cust!=null){
-//			return cust.get();
-// 		}
-//		return null;
-//	}
+
 
 	//3rd method.....taking customer as parameter and doing update operation
 	@Override
 	@Transactional
 	public Customer updateCustomer(Customer c) {
-		// TODO Auto-generated method stub
-		//Customer customer = customerRepository.findById(c.getCustomerId()).get();
-		//System.out.println(customer);
-		//if(customer !=null) {
-		//customer.setCustomer(c);
+		
 		Customer customer = customerRepository.saveAndFlush(c);
 		logger.info("resulted customer in updateCustomer method: "+ customer);
 			return customer;
-		//}
-		//return null;
+		
 		
 		
 	}

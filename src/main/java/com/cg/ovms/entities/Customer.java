@@ -12,8 +12,7 @@ import javax.persistence.Table;
 @Table(name="customer")
 public class Customer {
 
-//	@SequenceGenerator(name="customer_sequence",allocationSize = 1)
-//	@GeneratedValue(strategy = GenerationType.AUTO ,generator = "customer_sequence")
+
 	@Id
 	@Column(name="customer_id")
 	private int customerId;
@@ -43,11 +42,7 @@ public class Customer {
 		this.address = address;
 	}
 	
-//	
-//	public Customer(int customerId, String firstName, String lastName, String emailId, String mobileNumber, String address) {
-//		this(firstName,lastName,emailId,mobileNumber,address);
-//		this.customerId = customerId;
-//	}
+
 	
 
 	public int getCustomerId() {
