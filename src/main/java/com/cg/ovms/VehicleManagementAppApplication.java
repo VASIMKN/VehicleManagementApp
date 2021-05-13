@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+
 @ComponentScan(basePackages = "com.cg.ovms")
 public class VehicleManagementAppApplication {
 //main method

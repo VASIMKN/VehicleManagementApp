@@ -9,28 +9,23 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CUSTOMER")
+@Table(name="customer")
 public class Customer {
 
 //	@SequenceGenerator(name="customer_sequence",allocationSize = 1)
 //	@GeneratedValue(strategy = GenerationType.AUTO ,generator = "customer_sequence")
 	@Id
-	@Column(name="CID")
+	@Column(name="customer_id")
 	private int customerId;
-	
-	@Column(name="FNAME")
+	@Column(name="first_name")
 	private String firstName;
-	
-	@Column(name="LNAME")
+	@Column(name="last_name")
 	private String lastName;
-	
-	@Column(name="MNUMBER")
+	@Column(name="mobile_number")
 	private String mobileNumber;
-	
-	@Column(name="EID")
+	@Column(name="email_id")
 	private String emailId;
-	
-	@Column(name="ADDR")
+	@Column(name="address")
 	private String address;
 	
 	public Customer() {
@@ -101,6 +96,14 @@ public class Customer {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public void setCustomer(Customer c) {
+		this.customerId = c.customerId;
+		this.firstName = c.firstName;
+		this.lastName = c.lastName;
+		this.mobileNumber = c.mobileNumber;
+		this.emailId = c.emailId;
+		this.address = c.address;
 	}
 
 	@Override

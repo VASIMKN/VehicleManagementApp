@@ -17,6 +17,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	//runtime('com.h2database:h2')
+	//testCompile('org.junit.jupiter:junit-jupiter-engine:5.2.0')
+}
 }
 
 test {
