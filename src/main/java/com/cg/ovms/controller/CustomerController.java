@@ -52,9 +52,7 @@ public class CustomerController {
 	// 2nd method....(view)
 	@GetMapping(path = "/view/{id}", produces = "application/json")
 	public ResponseEntity<Customer> viewCustomerById(@PathVariable("id")int id){
-	//(@RequestBody Customer customer){
-	//
-		//Customer customer = cu
+	
 		try {
 			Customer c = customerService.viewCustomerById(id);
 			return new ResponseEntity<Customer>(c, HttpStatus.OK);
