@@ -63,64 +63,32 @@ public class CustomerTest {
 		when(customerRepository.findById(7)).thenReturn(Optional.of(customer));
 		 Customer c =customerService.removeCustomer(7);
 		 verify(customerRepository,times(1)).delete(customer);
-		//Customer c = new Customer();
-		//c.setCustomerId(2);
-		//Customer customer = customerRepository.findById(6).get();
 		
-		//Customer customer1 = customerService.removeCustomer(6);
-		//String firstName = customerRepository.findById(5).get().getFirstName();
-		//assertThat(firstName.equals(null));
-		//assertThrows(Exception.class, ()->{
-		//	customerRepository.findById(6).get();
-        //});
-       // passing here booking id
-		
-		
-		//assertThrows(null, null)
-		
-		//when(customerRepository.findById(2)).thenReturn(Optional.of(c));
-		//Assertions.assertDoesNotThrow(()-> customerService.removeCustomer(4));
 	}
 	//3rd.... test case for update customer operation
 	@Test
 	public void updateCustomer() {
-//		Optional<Customer> customer = customerRepository.findById(1);
-//		if(customer.isPresent()) {
-//			customer.get().setFirstName("sourav");
-//			customerService.addCustomer(customer.get());
-//			
-//		}
-//		Customer updatedCust = customerService.viewCustomerById(1);
-//				//customerRepository.findById(1);
-//		if(updatedCust != null) {
-//			assertThat(updatedCust.getFirstName().equals("sourav"));
-//		}
+
 		
 		Customer value = customerData();
 		when(customerRepository.findById(7)).thenReturn(Optional.of(value));
 		Optional<Customer> customer = customerRepository.findById(7);
 		Customer customer1 = customer.get();
-		//System.out.println(booking);
-		//Optional<Booking> booking1 = booking;
+		
 		if(customer.isPresent()) {
 			customer1.setMobileNumber("81588");
 			when(customerRepository.save(customer1)).thenReturn(customer1);
 			customerService.updateCustomer(customer.get());
 			assertEquals("81588",customerRepository.findById(7).get().getMobileNumber());
-			//customerRepository.save(customer.get());
+			
 		}
-		//Optional<Customer> updatedCustomer = customerRepository.findById(7);
 		
-			//assertEquals("81588",customerService.updateCustomer(customer.get()).getMobileNumber());
 		
 	}
 	//4th .... test case for view customer operation
 	@Test
 	public void viewCustomerById() {
-//		Customer customer = customerService.viewCustomerById(1);
-//		Customer customer1 = customerRepository.findById(1).get();
-//		
-//			assertEquals(customer.getCustomerId(),customer1.getCustomerId());
+
 		
 			Customer customer = customerData();
 			when(customerRepository.findById(7)).thenReturn(Optional.of(customer));

@@ -33,8 +33,7 @@ public class BookingTest {
 	IBookingRepository bookingRepository;
 	@Autowired
 	IBookingService bookingService;
-//	@MockBean
-//	IVehicleRepository vehicleRepository;
+
 	@MockBean
 	IVehicleService IVehicleService;
 	
@@ -99,7 +98,7 @@ public class BookingTest {
 		
 		Booking booking = bookingData();
 		when(bookingRepository.findById(4)).thenReturn(Optional.of(booking));
-		//Assertions.assertDoesNotThrow(()-> bookingService.cancelBooking(4));
+		
 		
 		Booking b =bookingService.cancelBooking(4);// passing here booking id
 		
@@ -109,27 +108,27 @@ public class BookingTest {
 	
 	@Test
 	public void updateBooking() {
-		//Optional<Booking> booking = bookingRepository.findById(4);
+		
 		
 		Booking value = bookingData();
 		when(bookingRepository.findById(4)).thenReturn(Optional.of(value));
 		Optional<Booking> booking = bookingRepository.findById(4);
 		Booking booking1 = booking.get();
 		
-		//Optional<Booking> booking1 = booking;
+		
 		if(booking.isPresent()) {
 			booking1.setDistance(22);
 			when(bookingRepository.save(booking1)).thenReturn(booking1);
 			assertEquals(20,bookingService.updateBooking(booking.get()).getDistance());
-			//bookingRepository.save(booking.get());
+			
 		}
-		//Optional<Booking> updatedBooking = bookingRepository.findById(4);
+		
 		
 			
 		
 		
 	}
-	//updatedBooking.get().getDistance()
+	
 	@Test
 	public void viewBooking() {
 		Booking booking = bookingData();

@@ -14,17 +14,7 @@ import com.cg.ovms.entities.Vehicle;
 
 @Repository
 public interface IBookingRepository extends JpaRepository<Booking, Integer> {
-//
-//	public Booking addBooking(Booking booking);
-//	public Booking cancelBooking(Booking b);
-//	public Booking updateBooking(Booking b);
-//	public Booking viewBooking(Booking b);
-//	public List<Booking> viewAllBooking(Customer customer);
-//
-//	public List<Booking> viewAllBookingByDate(LocalDate bookingDate);
-//
-//	public List<Booking> viewAllBookingByVehicle(Vehicle vehicle);
-//
+
 	@Query("SELECT b fROM Booking b WHERE b.customer= :customer")
 	public List<Booking> viewAllBooking(@Param("customer") Customer customer);
 	@Query("SELECT b FROM Booking b WHERE b.bookingDate= :bookingDate")
